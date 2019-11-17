@@ -8,6 +8,17 @@ public class BinarySearchImpl {
 	@Autowired
 	private SortAlgorithm sortAlgorithm;
 
+	// Constructor Dep Injection: Autowiring by type from bean name
+	// 'binarySearchImpl' via constructor to bean
+	// named 'quickSortAlgorithm'
+//	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
+//		super();
+//		this.sortAlgorithm = sortAlgorithm;
+//	}
+
+	// Setter Dep Injection: Autowiring by type from bean name 'binarySearchImpl' to
+	// bean named 'quickSortAlgorithm'
+
 	public int binarySearch(int[] numbers, int numberToFind) {
 		int[] sortedNumbers = sortAlgorithm.sort(numbers);
 
@@ -15,4 +26,5 @@ public class BinarySearchImpl {
 
 		return 3;
 	}
+
 }
